@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Rubik+Glitch&family=Rubik:ital,wght@0,300..900;1,300..900&family=Sora:wght@100..800&display=swap');
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: IBM Plex Sans, sans-serif;
+}
+
+:root{
+  --primary-color:#202329;
+
+  --inc-color:#FED32C;
+  --c-color:#6FC276;
+  /*Not Hover*/
+  --hc-color: rgba(254, 211, 44, 0.5);
+
+  --secondary-color: #2B3138;
+  --default: #FFFFFF;
+  --date-text: rgba(255, 255, 255, 0.8);
+
+  /* Headings */
+  --h-mobile: 1.7rem; 
+  --h-computer: 2.3rem;
+
+  /* Sub Headings */
+  --sh-mobile: 1.25rem; 
+  --sh-computer: 1.50rem;
+
+  /*Body*/
+  --b-mobile: 0.9rem;
+  --b-computer: 1rem;
+}
+.todo-container{
+  box-shadow: rgba(60, 64, 67, 0.6) 0px 1px 34px 0px, rgba(60, 64, 67, 0.15) 0px 2px 0px 0px;
+}
+button{
+  outline:none;
+}
+.main-con{
+  
+}
+.b-c{
+  border: 1px solid var(--c-color);
+}
+.b-inc{
+  border: 1px solid var(--inc-color);
+}
+h1 {
+  font-size: var(--h-computer);
+  font-weight: bold;
+}
+h3{
+  font-size: var(--sh-computer);
+  font-weight: bold;
+}
+p{
+  font-size: var(--b-computer);
+}
+@media (max-width: 640px) {
+  h1 {
+    font-size: var(--h-mobile);
+  }
+  h3{
+    font-size: var(--sh-mobile);
+    font-weight: bold;
+  }
+  p{
+    font-size: var(--b-mobile);
+  }
+}
+@keyframes bounce {
+  0% {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.6); 
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1); 
+    opacity: 1;
+  }
+}
+
+.zoom-in {
+  animation: zoomIn 0.2s ease-out forwards; 
+}
+
+@keyframes slideIn {
+  0% {
+    transform: translateX(-100%); 
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0); 
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  animation: slideIn 0.3s ease-out forwards; 
+}
+
+.shadow{
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px 0px;
+}
+
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.8s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
