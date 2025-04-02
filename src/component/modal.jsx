@@ -46,7 +46,7 @@ const Modal = ({ closeModal, setTasks, task, isEdit }) => {
       
       <form className='test zoom-in bg-[var(--secondary-color)] sm:max-w-[700px] max-h-[500px] max-w-[700px] sm:max-h-[400px] w-full h-full p-3 rounded-[5px]'>
         <div className='w-full flex justify-between mb-5'>
-          <h3>{isEdit ? 'Edit Task' : 'Add Task'}</h3>
+          <h3 className='sm:text-[1.50rem] text-[1.25rem] font-semibold ...'>{isEdit ? 'Edit Task' : 'Add Task'}</h3>
           <p onClick={closeModal} className='hover:text-red-700 cursor-pointer duration-200 ease-in'>
             <i className="fa-solid fa-circle-xmark"></i>
           </p>

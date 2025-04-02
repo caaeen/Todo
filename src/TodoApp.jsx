@@ -57,12 +57,12 @@ const Todo = () => {
       
         <div className='fade-in  bg-[var(--primary-color)] todo-container relative p-5 min-h-svh h-full max-w-[800px] w-full'>
           <div className='flex justify-between'>
-            <h1 className='border-b-2 w-1/2 sm:text-[2.3rem] text-[1.7rem]'>To-Dos</h1>
+            <h1 className='border-b-2 w-1/2 sm:text-[2.3rem] text-[1.7rem] font-bold ...'>To-Dos</h1>
             <button
               onClick={() => openModal()} // open modal for adding tasks
               className='sm:top-5 sm:right-5 bottom-20 right-5 duration-300 ease-in bg-[var(--hc-color)] hover:bg-[var(--inc-color)] p-2 sm:w-[55px] sm:h-[55px] w-[50px] h-[50px] rounded-[50px]'
             >
-              <h3><i className='fa-solid fa-plus'></i></h3>
+              <h3 className='sm:text-[1.50rem] text-[1.25rem] font-semibold ...' ><i className='fa-solid fa-plus'></i></h3>
             </button>
           </div>
 
@@ -111,7 +111,7 @@ const Todo = () => {
                   }`}>
 
                   <div className="flex justify-between items-center">
-                    <h3 className={` ${task.isComplete ? "line-through " : "text-none"}`}>{task.title}</h3>
+                    <h3 className={`sm:text-[1.50rem] text-[1.25rem] font-semibold ... ${task.isComplete ? "line-through " : "text-none"}`}>{task.title}</h3>
                     <div className="flex gap-3">
                       <button
                         onClick={() => openModal(task)} // edit mode
