@@ -75,7 +75,7 @@ const Todo = () => {
               <p className='sm:text-[1rem] text-[0.8rem]'>All ({tasks.length})</p>
             </button>
             <button
-              className={`max-w-[200px] px-3 py-1 rounded-[5px]  ${selectedCategory === "complete" ? "bg-white text-black " : "hover:bg-white/40 ease duration-300"}`}
+              className={` max-w-[200px] px-3 py-1 rounded-[5px]  ${selectedCategory === "complete" ? "bg-white text-black " : "hover:bg-white/40 ease duration-300"}`}
               onClick={() => setSelectedCategory("complete")}
             >
               <p className='sm:text-[1rem] text-[0.8rem]'>Complete ({tasks.filter(task => task.isComplete).length})</p>
@@ -144,17 +144,21 @@ const Todo = () => {
                   </div>
                   <div className="flex justify-between items-center w-full mt-3">
                     <div>
-                    <p className='sm:text-[1rem] text-[0.7rem]'><b>Due: </b>{task.dueDate ? new Date(task.dueDate).toLocaleString("en-US", { 
-                      year: 'numeric', 
-                      month: 'long', 
-                      day: 'numeric', 
-                      hour: '2-digit', 
-                      minute: '2-digit' 
-                    }) : "No due date"}</p>
-
-                    </div>
-                    <div>
-                      <p className='text-white/50'><i><small>{task.currentDate}</small></i></p>
+                      <p 
+                        className={`sm:text-[1rem] text-[0.7rem] 
+                          ${task.dueDate && new Date(task.dueDate) < new Date() ? "text-red-500" : ""}`}
+                      >
+                        <b>Due: </b>
+                        {task.dueDate 
+                          ? new Date(task.dueDate).toLocaleString("en-US", { 
+                              year: 'numeric', 
+                              month: 'long', 
+                              day: 'numeric', 
+                              hour: '2-digit', 
+                              minute: '2-digit' 
+                            }) 
+                          : "No due date"}
+                      </p>
                     </div>
                   </div>
                 </div>
