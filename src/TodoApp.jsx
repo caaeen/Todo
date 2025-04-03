@@ -69,19 +69,19 @@ const Todo = () => {
           {/* Category */}
           <div className="w-full pt-5 flex items-center gap-4">
             <button
-              className={` max-w-[200px] px-3 py-1 rounded-[5px] ${selectedCategory === "all" ? "bg-white text-black " : "hover:bg-white/40 ease duration-300"}`}
+              className={` max-w-[200px] px-3 py-1 rounded-[5px] sm:text-[1rem] text-[0.7rem] ${selectedCategory === "all" ? "bg-white text-black " : "hover:bg-white/40 ease duration-300"}`}
               onClick={() => setSelectedCategory("all")}
             >
               <p>All ({tasks.length})</p>
             </button>
             <button
-              className={`max-w-[200px] px-3 py-1 rounded-[5px] ${selectedCategory === "complete" ? "bg-white text-black " : "hover:bg-white/40 ease duration-300"}`}
+              className={`max-w-[200px] px-3 py-1 rounded-[5px] sm:text-[1rem] text-[0.7rem]${selectedCategory === "complete" ? "bg-white text-black " : "hover:bg-white/40 ease duration-300"}`}
               onClick={() => setSelectedCategory("complete")}
             >
               <p>Complete ({tasks.filter(task => task.isComplete).length})</p>
             </button>
             <button
-              className={`max-w-[200px] px-3 py-1 rounded-[5px] ${selectedCategory === "incomplete" ? "bg-white text-black " : "hover:bg-white/40 ease duration-300"}`}
+              className={`max-w-[200px] px-3 py-1 rounded-[5px] sm:text-[1rem] text-[0.7rem] ${selectedCategory === "incomplete" ? "bg-white text-black " : "hover:bg-white/40 ease duration-300"}`}
               onClick={() => setSelectedCategory("incomplete")}
             >
               <p>Incomplete ({tasks.filter(task => !task.isComplete).length})</p>
@@ -140,11 +140,18 @@ const Todo = () => {
                     </div>
                   </div>
                   <div className={`mt-3 ${task.isComplete ? "line-through " : "text-none"}`}>
-                    <p>{task.description}</p>
+                    <p className='sm:text-[1rem] text-[0.8rem]'>{task.description}</p>
                   </div>
                   <div className="flex justify-between w-full mt-3">
                     <div>
-                      <p><b>Due: </b>{task.dueDate ? new Date(task.dueDate).toLocaleDateString("en-US", { year: 'numeric', month: 'long', day: 'numeric' }) : "No due date"}</p>
+                    <p className='sm:text-[1rem] text-[0.7rem]'><b>Due: </b>{task.dueDate ? new Date(task.dueDate).toLocaleString("en-US", { 
+                      year: 'numeric', 
+                      month: 'long', 
+                      day: 'numeric', 
+                      hour: '2-digit', 
+                      minute: '2-digit' 
+                    }) : "No due date"}</p>
+
                     </div>
                     <div>
                       <p className='text-white/50'><i><small>{task.currentDate}</small></i></p>
